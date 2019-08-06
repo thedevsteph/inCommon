@@ -19,6 +19,7 @@ import com.google.android.gms.maps.GoogleMap
 import com.google.android.gms.maps.OnMapReadyCallback
 import com.google.android.gms.maps.SupportMapFragment
 import com.google.android.gms.maps.model.LatLng
+import com.google.android.gms.maps.model.MapStyleOptions
 import com.google.android.gms.maps.model.MarkerOptions
 import com.google.android.gms.tasks.Task
 import yass.stephanie.com.incommon.R
@@ -29,11 +30,10 @@ class HomeFragment : Fragment(), OnMapReadyCallback {
 
     companion object {
         var map: GoogleMap? = null
-        private const val ZOOM = 17f
+        private const val ZOOM = 15.6f
         private const val REQUEST_CODE = 65535
         private const val TIME_INTERVAL: Long = 10000
         private const val FASTEST_INTERVAL: Long = 5000
-        private lateinit var fusedLocationClient: FusedLocationProviderClient
         private var currentUserLocation: LatLng? = null
     }
 
@@ -55,7 +55,6 @@ class HomeFragment : Fragment(), OnMapReadyCallback {
         mapFragment.getMapAsync(this)
     }
 
-
     private fun checkAndGetPermission() {
         if (ContextCompat.checkSelfPermission(context!!, android.Manifest.permission.ACCESS_FINE_LOCATION) !=
             PackageManager.PERMISSION_GRANTED &&
@@ -75,10 +74,10 @@ class HomeFragment : Fragment(), OnMapReadyCallback {
     override fun onMapReady(googleMap: GoogleMap?) {
         checkAndGetPermission()
         map = googleMap
-
         map?.let { currentMap ->
             currentMap.apply {
                 isMyLocationEnabled = true
+                setMapStyle(MapStyleOptions.loadRawResourceStyle(context, R.raw.map_style))
                 currentUserLocation?.let {
                     currentMap.apply {
                         uiSettings.isZoomControlsEnabled = true
@@ -88,7 +87,6 @@ class HomeFragment : Fragment(), OnMapReadyCallback {
             }
         }
     }
-
 
     private fun createLocationRequest(): LocationRequest? {
         return LocationRequest.create()?.apply {
@@ -101,14 +99,14 @@ class HomeFragment : Fragment(), OnMapReadyCallback {
     @SuppressLint("MissingPermission")
     private fun goToCurrentLocation() {
 
-        var currentActivity = this.requireActivity()
+        val currentActivity = this.requireActivity()
 
         val builder = LocationSettingsRequest.Builder().addLocationRequest(createLocationRequest()!!)
         val client: SettingsClient = LocationServices.getSettingsClient(currentActivity)
         val task: Task<LocationSettingsResponse> = client.checkLocationSettings(builder.build())
         task.addOnSuccessListener { _ ->
 
-            fusedLocationClient = LocationServices.getFusedLocationProviderClient(currentActivity)
+            val fusedLocationClient = LocationServices.getFusedLocationProviderClient(currentActivity)
 
             fusedLocationClient.lastLocation
                 .addOnSuccessListener { location: Location? ->
