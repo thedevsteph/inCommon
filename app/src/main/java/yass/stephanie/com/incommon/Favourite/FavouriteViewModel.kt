@@ -1,6 +1,6 @@
 package yass.stephanie.com.incommon.Home
 
-import android.arch.lifecycle.ViewModel;
+import androidx.lifecycle.ViewModel
 
 class FavouriteViewModel : ViewModel() {
     // TODO: Implement the ViewModel

@@ -1,11 +1,10 @@
 package yass.stephanie.com.incommon
 
 import android.os.Bundle
-import android.support.design.widget.BottomNavigationView
-import android.support.v4.app.Fragment
-import android.support.v7.app.AppCompatActivity
 import android.view.MenuItem
-import kotlinx.android.synthetic.main.activity_main.*
+import androidx.appcompat.app.AppCompatActivity
+import androidx.fragment.app.Fragment
+import com.google.android.material.bottomnavigation.BottomNavigationView
 import yass.stephanie.com.incommon.Home.FavouriteFragment
 import yass.stephanie.com.incommon.Home.HomeFragment
 import yass.stephanie.com.incommon.Home.MessagesFragment
@@ -17,7 +16,9 @@ class MainActivity : AppCompatActivity(), BottomNavigationView.OnNavigationItemS
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
-        bottom_navigation_menu.setOnNavigationItemSelectedListener(this)
+
+        var navigationView = findViewById<BottomNavigationView>(R.id.bottom_navigation_menu)
+        navigationView.setOnNavigationItemSelectedListener(this)
 
         loadFragment(HomeFragment())
     }
