@@ -4,4 +4,8 @@
     <color name="colorPrimaryDark">#00574B</color>
     <color name="colorAccent">#D81B60</color>
     <color name="whiteBoy">#FFFFFF</color>
+    <color name="cutePurple">#eee6ff</color>
+    <color name="darkPurple">#0C0A22</color>
+    <color name="blackBoy">#000000</color>
+    <color name="mildOrangeBoy">#FFBD68</color>
 </resources>
