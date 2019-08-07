@@ -8,5 +8,9 @@
     <color name="darkPurple">#0C0A22</color>
     <color name="blackBoy">#000000</color>
     <color name="mildOrangeBoy">#FFBD68</color>
-    <color name="greyBoy">#575757</color>
+    <color name="greyBoy">#BBC0C5</color>
+    <color name="lightGreyBoy">#DFE1E6</color>
+    <color name="darkRedBoy">#AA3442</color>
+    <color name="lightGreenBoy">#D8EFEA</color>
+    <color name="darkGreenBoy">#239277</color>
 </resources>
