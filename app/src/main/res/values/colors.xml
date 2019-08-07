@@ -13,4 +13,6 @@
     <color name="darkRedBoy">#AA3442</color>
     <color name="lightGreenBoy">#D8EFEA</color>
     <color name="darkGreenBoy">#239277</color>
+    <color name="messageListBackground">#F6F8FC</color>
+
 </resources>

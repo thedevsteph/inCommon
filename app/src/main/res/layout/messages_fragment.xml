@@ -4,11 +4,12 @@
         xmlns:tools="http://schemas.android.com/tools"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
+        android:background="@color/messageListBackground"
         tools:context=".Home.MessagesFragment">
 
-    <TextView
+    <androidx.recyclerview.widget.RecyclerView
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:text="Messages"/>
+            android:layout_height="match_parent">
 
+    </androidx.recyclerview.widget.RecyclerView>
 </FrameLayout>
