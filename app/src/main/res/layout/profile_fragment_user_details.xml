@@ -35,7 +35,7 @@
             android:layout_height="wrap_content"
             android:textColor="@color/whiteBoy"
             app:layout_constraintStart_toStartOf="parent"
-            android:text="5 things in common"
+            android:text="7 YARDS AWAY"
             app:layout_constraintTop_toBottomOf="@id/profile_fragment_user_name"
             android:layout_marginTop="6dp"
             app:layout_constraintEnd_toEndOf="parent"/>

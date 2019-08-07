@@ -58,5 +58,36 @@ class ViewHelper {
         )
     }
 
+    fun generateMockMessageList(): ArrayList<MutableMap<String, String>> {
+        var mockData = arrayListOf<MutableMap<String, String>>()
+        var singleMessage = mutableMapOf<String, String>()
+        singleMessage["imageLink"] = "http://www.imageLink.com"
+        singleMessage["userName"] = "James Thompson"
+        singleMessage["lastMessage"] = "Where are you?"
+        singleMessage["lastMessageDate"] = "15 Jun"
+
+        var singleMessage2 = mutableMapOf<String, String>()
+        singleMessage2["imageLink"] = "http://www.imageLink.com"
+        singleMessage2["userName"] = "Yoko"
+        singleMessage2["lastMessage"] = "Meeting Mary at "
+        singleMessage2["lastMessageDate"] = "10 Jun"
+
+        mockData.apply {
+            add(singleMessage)
+            add(singleMessage)
+            add(singleMessage2)
+            add(singleMessage)
+            add(singleMessage2)
+            add(singleMessage2)
+            add(singleMessage)
+            add(singleMessage)
+            add(singleMessage2)
+            add(singleMessage2)
+            add(singleMessage)
+
+        }
+        return mockData
+    }
+
 
 }
