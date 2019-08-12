@@ -5,17 +5,26 @@
         xmlns:app="http://schemas.android.com/apk/res-auto"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:background="@color/colorAccent"
+        android:background="@color/whiteBoy"
+        android:layout_marginBottom="50dp"
         tools:context=".Chat.ChatFragment">
 
-    <TextView
+
+    <androidx.recyclerview.widget.RecyclerView
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
+            android:id="@+id/chat_message_recyclerview"
+            android:layout_height="0dp"
             app:layout_constraintTop_toTopOf="parent"
+            android:layout_marginBottom="8dp"
+            app:layout_constraintBottom_toTopOf="@+id/enter_message_button"/>
+
+
+    <include
+            android:id="@+id/enter_message_button"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
             app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            android:textColor="@color/whiteBoy"
-            android:text="Welcome to the chat"/>
+            layout="@layout/chat_fragment_enter_text"/>
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>

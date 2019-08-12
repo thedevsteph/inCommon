@@ -5,6 +5,7 @@ import android.view.ViewGroup
 import android.widget.TextView
 import androidx.core.content.ContextCompat
 import org.apmem.tools.layouts.FlowLayout
+import yass.stephanie.com.incommon.Chat.ChatMessageData
 
 class ViewHelper {
 
@@ -72,21 +73,49 @@ class ViewHelper {
         singleMessage2["lastMessage"] = "Meeting Mary at "
         singleMessage2["lastMessageDate"] = "10 Jun"
 
-        mockData.apply {
-            add(singleMessage)
-            add(singleMessage)
-            add(singleMessage2)
-            add(singleMessage)
-            add(singleMessage2)
-            add(singleMessage2)
-            add(singleMessage)
-            add(singleMessage)
-            add(singleMessage2)
-            add(singleMessage2)
-            add(singleMessage)
-
+        for (i in 1..5) {
+            mockData.apply {
+                add(singleMessage)
+                add(singleMessage2)
+            }
         }
         return mockData
+    }
+
+    fun generateMockChatMessages(): MutableList<ChatMessageData> {
+
+        var receivedMessage = ChatMessageData(
+            false,
+            "Hi there, Bro",
+            "James",
+            "4:15pm"
+        )
+
+
+        var sentMessageData = ChatMessageData(
+            true,
+            "Hi there, James!",
+            "You",
+            "4:20pm"
+        )
+
+
+        var sentMessage2 = ChatMessageData(
+            true,
+            "K",
+            "You",
+            "4:20pm"
+        )
+
+
+        return mutableListOf(
+            receivedMessage,
+            sentMessageData,
+            sentMessageData,
+            receivedMessage,
+            sentMessageData,
+            sentMessage2
+        )
     }
 
 
