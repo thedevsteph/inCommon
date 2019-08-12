@@ -4,5 +4,12 @@
     <string name="menu_messages">Messages</string>
     <string name="menu_favourite">Favorites</string>
     <string name="menu_home">Home</string>
-    <string name="none">  </string>
+    <string name="none"></string>
+    <string name="placeholder_medium_text">This is a medium text message. This is a medium text message. This is a
+        medium text message
+    </string>
+    <string name="placeholder_short_text">This is a short text message</string>
+    <string name="placeholder_long_text">This is a long text message. This is a long text message. This is a long text
+        message. This is a long text message. This is a long text message.. This is a long text message.
+    </string>
 </resources>

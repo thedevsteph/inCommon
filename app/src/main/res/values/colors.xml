@@ -15,5 +15,7 @@
     <color name="darkGreenBoy">#239277</color>
     <color name="messageListBackground">#F6F8FC</color>
     <color name="enterMessageBackground">#F4E8D9</color>
+    <color name="receivedMessageBackground">#E5E5E5</color>
+    <color name="sentMessageBackground">#56bff0</color>
 
 </resources>
