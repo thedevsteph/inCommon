@@ -1,17 +1,14 @@
 package yass.stephanie.com.incommon.Messages
 
+import android.content.Context
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.TextView
-import android.widget.Toast
-import androidx.recyclerview.widget.RecyclerView
-import yass.stephanie.com.incommon.R
 import androidx.appcompat.app.AppCompatActivity
-import android.R.attr.author
-import android.content.Context
-import android.os.Bundle
+import androidx.recyclerview.widget.RecyclerView
 import yass.stephanie.com.incommon.Chat.ChatFragment
+import yass.stephanie.com.incommon.R
 
 
 class MessageListAdapter(val data: ArrayList<MutableMap<String, String>>) :
@@ -44,11 +41,9 @@ class MessageListAdapter(val data: ArrayList<MutableMap<String, String>>) :
         }
 
         holder.view.setOnClickListener(onClickListener)
-
-
     }
 
-    private fun openChatFragment(context: Context){
+    private fun openChatFragment(context: Context) {
         val chatFragment = ChatFragment()
         val activity = context as AppCompatActivity
         activity.supportFragmentManager.beginTransaction().replace(R.id.main_activity_layout, chatFragment)

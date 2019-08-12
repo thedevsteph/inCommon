@@ -70,6 +70,7 @@ class HomeFragment : Fragment(), OnMapReadyCallback {
         }
     }
 
+
     @SuppressLint("MissingPermission")
     override fun onMapReady(googleMap: GoogleMap?) {
         checkAndGetPermission()
@@ -100,7 +101,6 @@ class HomeFragment : Fragment(), OnMapReadyCallback {
     private fun goToCurrentLocation() {
 
         val currentActivity = this.requireActivity()
-
         val builder = LocationSettingsRequest.Builder().addLocationRequest(createLocationRequest()!!)
         val client: SettingsClient = LocationServices.getSettingsClient(currentActivity)
         val task: Task<LocationSettingsResponse> = client.checkLocationSettings(builder.build())

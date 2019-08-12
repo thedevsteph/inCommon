@@ -50,7 +50,7 @@ class MessagesFragment : Fragment() {
     override fun onActivityCreated(savedInstanceState: Bundle?) {
         super.onActivityCreated(savedInstanceState)
         viewModel = ViewModelProviders.of(this).get(MessagesViewModel::class.java)
-        // TODO: Use the ViewModelbu
+        // TODO: Use the ViewModel
     }
 
 }
